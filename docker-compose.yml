@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql_container
+    environment:
+      MYSQL_ROOT_PASSWORD: Myp@ss123456789  # Set root user password
+      MYSQL_DATABASE: my_database             # Optional: Create a default database
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./server/backups:/backups                     # Mount host backups directory to container
+
+    ports:
+      - "3307:3306"  # Map the container's port 3306 to the host's port 3306
+    networks:
+      - mysql_network
+
+volumes:
+  mysql_data:  # This volume will persist MySQL data
+
+networks:
+  mysql_network:  # This is an optional network
