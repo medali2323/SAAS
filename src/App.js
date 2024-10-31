@@ -1,9 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
+import './App.css';
+
 function App() {
-  // Simulation des données des instances
+  // Simulation of instance data
   const instances = [
     { name: 'Test pre-prod', url: 'https://test.visionerp.digital', email: 'test@visionerp.online', status: 'Prospect', version: 'v3.1.2' },
     { name: 'Afrec', url: 'https://afrec.visionerp.digital', email: 'afrec@yopmail.com', status: 'Prospect', version: 'v3.4.3' },
@@ -12,12 +14,16 @@ function App() {
   ];
 
   return (
-    <div className="App">
-      <Navbar />
-      <Dashboard instances={instances} />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Dashboard instances={instances} />} />
+          {/* Additional routes for "Users", "Logs", and "Backup" pages can be added here */}
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
-
 
 export default App;

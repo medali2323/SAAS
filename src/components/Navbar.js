@@ -1,8 +1,10 @@
 // Navbar.js
 import React from 'react';
-import './navbar.css';
-
+import { NavLink } from 'react-router-dom';
 import { FaShapes } from 'react-icons/fa'; // Example icon, replace with the desired icon
+import './navbar.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 const Navbar = () => {
   return (
     <div className="navbar">
@@ -10,13 +12,13 @@ const Navbar = () => {
         <FaShapes />
       </div>
       <div className="navbar-links">
-        <button className="navbar-link">Instances</button>
-        <button className="navbar-link">Users</button>
-        <button className="navbar-link">Activity Logs</button>
-        <button className="navbar-link">Backup</button>
+        <NavLink to="/" className="navbar-link">Instances</NavLink>
+        <NavLink to="/users" className="navbar-link">Users</NavLink>
+        <NavLink to="/logs" className="navbar-link">Activity Logs</NavLink>
+        <NavLink to="/backup" className="navbar-link">Backup</NavLink>
       </div>
       <div className="navbar-avatar">
-        <img src="path_to_avatar_image.jpg" alt="User Avatar" />
+        <img src="https://via.placeholder.com/40" alt="User Avatar" />
       </div>
     </div>
   );
