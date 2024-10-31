@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
+import Backups from './components/backups/Backups'
 import './App.css';
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Dashboard instances={instances} />} />
           {/* Additional routes for "Users", "Logs", and "Backup" pages can be added here */}
+          <Route path="/backup" element={<Backups />} />
+
         </Routes>
       </div>
     </BrowserRouter>
