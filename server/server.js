@@ -79,7 +79,7 @@ app.get('/download/:_id', (req, res) => {
     }
     console.log(singleFile); // Log the found file for debugging
     // Download the SQL file from the backups directory
-    res.download(`backups/${singleFile.files}`);
+    res.download(`backups/backups/${singleFile.files}`);
 });
 
 // Function to restore a database from a SQL file
