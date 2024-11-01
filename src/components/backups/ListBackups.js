@@ -25,19 +25,19 @@ const ListBackups = () => {
   return (
     <div className='container App'>
       <br />
-      <h1>list of backups mysql </h1>
+      {/* <h1>list of backups mysql </h1> */}
       {list.map((item) => {
         return (
-          <React.Fragment >
-            <div className='col backupBg' >
-              <div>
-                {item.files}
-                <Restoredb id={item.id} name={item.files} />
-                <FileDownload id={item.id} name={item.files} />
+            <React.Fragment>
+              <div className="col backupBg">
+                <div>
+                  {item.files}
+                  <Restoredb id={item.id} name={item.files} />
+                  <FileDownload id={item.id} name={item.files} />
+                </div>
               </div>
-            </div>
           </React.Fragment>
-        )
+                  )
       })}
     </div>
   );
